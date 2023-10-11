@@ -2019,6 +2019,10 @@ function $f_Lcaos_frontend_widgets_WidgetInfo__$init$__V($thiz) {
   $thiz.expanded_$eq__Z__V(false);
   $thiz.location_$eq__I__V(0)
 }
+function $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo($thiz) {
+  $thiz.expanded_$eq__Z__V(true);
+  return $thiz
+}
 function $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo($thiz, i) {
   $thiz.location_$eq__I__V(i);
   return $thiz
@@ -17042,7 +17046,7 @@ function $c_Lccs_frontend_CaosConfig$() {
     return $m_Lccs_syntax_Parser$().parseProgram__T__Lccs_syntax_Program$System(str$1)
   }))(this));
   $m_s_package$();
-  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("a.0", "a.0", ""), new $c_Lcaos_frontend_Configurator$Example("a.b", "a.b", ""), new $c_Lcaos_frontend_Configurator$Example("a.b + c.d", "+", ""), new $c_Lcaos_frontend_Configurator$Example("a.b | a'", "|", ""), new $c_Lcaos_frontend_Configurator$Example("let P = a.b.P;\nin P", "loop", ""), new $c_Lcaos_frontend_Configurator$Example("let\n CM = coin.coffee.CM;\n CS = pub.coin.coffee.CS;\nin\n CM|CS", "coffee1", ""), new $c_Lcaos_frontend_Configurator$Example("let\n CM = coin.coffee'.CM;\n CS = pub.coin'.coffee.CS;\nin\n (CM|CS)\\{coffee,coin}", "coffee2", "")]));
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("let\n CM = coin.coffee'.CM;\n CS = pub.coin'.coffee.CS;\nin\n (CM|CS)\\{coffee,coin}", "coffee", ""), new $c_Lcaos_frontend_Configurator$Example("let\n CM = coin.coffee.CM;\n CS = pub.coin.coffee.CS;\nin\n CM|CS", "coffee-var", ""), new $c_Lcaos_frontend_Configurator$Example("a.0", "a.0", ""), new $c_Lcaos_frontend_Configurator$Example("a.b", "a.b", ""), new $c_Lcaos_frontend_Configurator$Example("a.b + c.d", "+", ""), new $c_Lcaos_frontend_Configurator$Example("a.b | a'", "|", ""), new $c_Lcaos_frontend_Configurator$Example("let P = a.b.P;\nin P", "loop", "")]));
   this.Lccs_frontend_CaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
   $m_s_package$();
   var $$x4 = $m_sr_ScalaRunTime$();
@@ -17062,7 +17066,7 @@ function $c_Lccs_frontend_CaosConfig$() {
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$2$1)
   }))(this)), $m_Lcaos_view_Text$());
   var $$x2 = new $c_T2("Run semantics", y$1);
-  var y$2 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$6$1) => ((e$2) => {
+  var this$37 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$6$1) => ((e$2) => {
     var e$3 = $as_Lccs_syntax_Program$System(e$2);
     return e$3
   }))(this)), $m_Lccs_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$7$1) => ((x$2) => {
@@ -17072,6 +17076,7 @@ function $c_Lccs_frontend_CaosConfig$() {
     var _$3$1 = $as_Lccs_syntax_Program$Action(_$3);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$3$1)
   }))(this)), 80);
+  var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$37);
   var $$x1 = new $c_T2("Build LTS", y$2);
   var initialSt = new $c_sjsr_AnonFunction1(((this$9$1) => ((e$3$1) => {
     var e$4 = $as_Lccs_syntax_Program$System(e$3$1);
