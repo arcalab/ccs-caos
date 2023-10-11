@@ -3,7 +3,7 @@
 Simple animator of CCS's core terms.
 A snapshot of the compiled website can be found in the `docs` folder, and used online via the link below.
 
- - http://lmf.di.uminho.pt/lambda-caos/
+ - http://lmf.di.uminho.pt/ccs-caos/
 
 
 # Caos
