@@ -3,9 +3,8 @@ package ccs.backend
 import caos.sos.SOS
 import ccs.backend.Semantics.St
 import ccs.syntax.{Program, Show}
-import ccs.syntax.Program.{System, Term, Action}
+import ccs.syntax.Program.*
 import Term.*
-import Action.*
 
 /** Small-step semantics for both commands and boolean+integer expressions.  */
 object Semantics extends SOS[Action,St]:
@@ -18,7 +17,7 @@ object Semantics extends SOS[Action,St]:
   /** What are the set of possible evolutions (label and new state) */
   def next[A>:Action](st: St): Set[(A, St)] = st.main match
     case End => Set()
-    case Proc(p) => next(System(st.defs,st.defs.getOrElse(p,End)))
+    case Proc(p) => next(st(st.defs.getOrElse(p,End)))
     case Prefix(act,t) => Set(act -> st(t))
     case Choice(t1,t2) =>
       next(st(t1)) ++ next(st(t2))

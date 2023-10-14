@@ -1,7 +1,10 @@
 package ccs.syntax
 
+import caos.sos.{HasTaus}
+
 /**
  * Internal structure to represent commands in a simple while language
+ *
  * @author José Proença
  */
 
@@ -17,13 +20,16 @@ object Program:
     case Rename(t:Term, f:String=>String)
     case Restr(t:Term, acts:Set[String])
 
-  enum Action:
-    case Out(a:String)
-    case In(a:String)
-    case Tau
+  trait Action extends HasTaus
+  case class Out(a:String) extends Action:
+    val isTau = false
+  case class In(a:String) extends Action:
+    val isTau = false
+  case object Tau extends Action:
+    val isTau = true
 
-  case class System(defs: Map[String,Term], main:Term):
-    def apply(newMain:Term) = System(defs,newMain)
+  case class System(defs: Map[String,Term], main:Term, toCompare:Option[Term]):
+    def apply(newMain:Term) = System(defs,newMain,toCompare)
 
 
   //////////////////////////////
@@ -32,7 +38,7 @@ object Program:
 
   object Examples:
     import Program.Term._
-    import Program.Action._
+
 
     val p1: Term =
       Prefix(In("x"),End)

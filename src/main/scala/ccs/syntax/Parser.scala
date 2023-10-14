@@ -57,14 +57,17 @@ object Parser :
   import scala.language.postfixOps
 
 
-  /** A program is a command with possible spaces or comments around. */
   def program: P[System] =
-    (system|term.map(x=>System(Map(),x))).surroundedBy(sps)
+    ((oneProgram<*sps)~((char('~')*>sps*>(term<*sps))?))
+      .map((x,y) => System(x.defs,x.main,y))
+  /** A program is a command with possible spaces or comments around. */
+  def oneProgram: P[System] =
+    (system|term.map(x=>System(Map(),x,None)))
 
   def system: P[System] =
     string("let") *> sps *>
     ((defn.repSep0(sps)<*sps<*string("in")<*sps).with1 ~ term)
-      .map((x,y)=>System(x.toMap,y))
+      .map((x,y)=>System(x.toMap,y,None))
 
   def defn:P[(String,Term)] =
     (procName <* char('=').surroundedBy(sps)) ~
@@ -80,7 +83,7 @@ object Parser :
       .map(l=>l.toList.tail.foldLeft(l.head)((t1,t2)=>Choice(t1,t2)))
 
   def termRestr(more:P[Term]): P[Term] =
-    (termSeq(more) ~ ((sps*>char('\\')*>sps*>setLbl)?))
+    ((termSeq(more) <* sps) ~ ((sps*>char('\\')*>sps*>setLbl <* sps)?))
       .map((t,r) => if r.isDefined then Restr(t,r.get) else t)
 
   def termSeq(more:P[Term]): P[Term] = P.recursive(t2 =>
@@ -101,8 +104,8 @@ object Parser :
     (varName ~ (((char('\'')?)<*sps)~ ((sps *> char('.') *> t2)?)))
       .map(x =>
        if x._2._1.isDefined
-       then Prefix(Action.Out(x._1),x._2._2.getOrElse(End))
-       else Prefix(Action.In(x._1),x._2._2.getOrElse(End))
+       then Prefix(Out(x._1),x._2._2.getOrElse(End))
+       else Prefix(In(x._1),x._2._2.getOrElse(End))
       )
 
   //  def par: P[Term] =

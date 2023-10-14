@@ -1,7 +1,7 @@
 package ccs.syntax
 
 import ccs.syntax.Program
-import Program.{Term,Action,System}
+import Program.*
 import Term.*
 
 
@@ -11,9 +11,14 @@ import Term.*
  */
 object Show:
 
+  def justTerm(s: System): String = apply(s.main)
+
   def apply(s: System): String =
     apply(s.defs)+
-    apply(s.main)
+    apply(s.main)+(s.toCompare match
+      case None => ""
+      case Some(t) => " ~~ "+apply(t)
+    )
   def apply(defs: Map[String,Term]): String =
     if defs.isEmpty then ""
     else "let\n"+
@@ -36,9 +41,9 @@ object Show:
     case _ => s"(${apply(e)})"
 
   def apply(a:Action): String = a match
-    case Action.Out(a) => a+"'"
-    case Action.In(a) => a
-    case Action.Tau => "tau"
+    case Out(a) => a+"'"
+    case In(a) => a
+    case Tau => "tau"
 
       // private def applyP(e: Term): String = e match
       //   case _:(Var|Val) => apply(e)
