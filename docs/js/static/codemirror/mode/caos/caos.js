@@ -194,11 +194,11 @@ CodeMirror.defineMode("caos", function(_config, modeConfig) {
 //    setType("keyword")( // where, ...
 //      "def");
 
-    setType("keyword")("while","skip","if","then","else",":=");
+    setType("keyword")("~","let","in");
 
 
     setType("builtin")( // types and constructors
-      "+","||","*","!","&&","<",">","=");
+      "+","|","*","!","&&","<",">","=",".","\\");
 
 //    setType("builtin")(
 //      );

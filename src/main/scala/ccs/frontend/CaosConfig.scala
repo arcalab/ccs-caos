@@ -46,11 +46,15 @@ object CaosConfig extends Configurator[System]:
         Show.justTerm, Show.justTerm, Show(_)),
   )
 
+  //// Documentation below
+
   override val footer: String =
     """Simple animator of Milner's CCS calculus for concurrent systems, meant both for teaching CCS and to exemplify the
-      | CAOS libraries, used to generate this website:
+      | CAOS libraries, used to generate this website. Source code available online:
+      | <a target="_blank" href="https://github.com/arcalab/ccs-caos">
+      | https://github.com/arcalab/ccs-caos</a> (CCS),
       | <a target="_blank" href="https://github.com/arcalab/CAOS">
-      | https://github.com/arcalab/CAOS</a>.""".stripMargin
+      | https://github.com/arcalab/CAOS</a> (CAOS).""".stripMargin
 
   private val ccsRules: String =
     """The operational rules that we use to reduce a CCS term are provided below.
