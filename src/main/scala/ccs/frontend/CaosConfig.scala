@@ -6,6 +6,7 @@ import caos.view.{Code, Mermaid, Text}
 import ccs.backend.*
 import ccs.syntax.{Program, Show}
 import Program.System
+import caos.sos.StrongBisim
 
 /** Object used to configure which analysis appear in the browser */
 object CaosConfig extends Configurator[System]:
@@ -43,6 +44,11 @@ object CaosConfig extends Configurator[System]:
       compareBranchBisim(Semantics,Semantics,
        (e:System)=>System(e.defs,e.main,None),
        (e:System)=>System(e.defs,e.toCompare.getOrElse(Program.Term.End),None),
+        Show.justTerm, Show.justTerm, Show(_)),
+    "Find strong bisimulation (given a program \"A ~ B\")" ->
+      compareStrongBisim(Semantics, Semantics,
+        (e: System) => System(e.defs, e.main, None),
+        (e: System) => System(e.defs, e.toCompare.getOrElse(Program.Term.End), None),
         Show.justTerm, Show.justTerm, Show(_)),
   )
 
@@ -119,5 +125,10 @@ object CaosConfig extends Configurator[System]:
       "will search for a (branching) bisimulation between these 2 processes, providing either a " +
       "concrete bisimulation or an explanation of where it failed.</p>"+
       "<p>When only a process is mentioned in the program, it checks if it is bisimilar to the empty process <code>0</code>.</p>"),
+    "Find strong bisimulation (given a program \"A ~ B\")" -> "More information on this widget" ->
+      ("<p>When the main program consists of 2 processes separated by <code>~</code>, this widget " +
+        "will search for a (strong) bisimulation between these 2 processes, providing either a " +
+        "concrete bisimulation or an explanation of where it failed.</p>" +
+        "<p>When only a process is mentioned in the program, it checks if it is bisimilar to the empty process <code>0</code>.</p>"),
   )
 

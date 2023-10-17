@@ -1069,6 +1069,9 @@ $c_Lcaos_frontend_Configurator$.prototype.compare__F2__Lcaos_view_ViewType__F1__
 $c_Lcaos_frontend_Configurator$.prototype.compareBranchBisim__Lcaos_sos_SOS__Lcaos_sos_SOS__F1__F1__F1__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo = (function(sos1, sos2, pre1, pre2, show1, show2, showAct, maxDepth) {
   return this.compare__F2__Lcaos_view_ViewType__F1__F1__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction2(((this$1, sos1$2, sos2$2, show1$2, show2$2, showAct$2, maxDepth$2) => ((a, b) => $m_Lcaos_sos_BranchBisim$().findBisimPP__O__O__F1__F1__F1__Lcaos_sos_SOS__Lcaos_sos_SOS__I__T(a, b, show1$2, show2$2, showAct$2, sos1$2, sos2$2, maxDepth$2)))(this, sos1, sos2, show1, show2, showAct, maxDepth)), $m_Lcaos_view_Text$(), pre1, pre2)
 });
+$c_Lcaos_frontend_Configurator$.prototype.compareStrongBisim__Lcaos_sos_SOS__Lcaos_sos_SOS__F1__F1__F1__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo = (function(sos1, sos2, pre1, pre2, show1, show2, showAct, maxDepth) {
+  return this.compare__F2__Lcaos_view_ViewType__F1__F1__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction2(((this$1, sos1$2, sos2$2, show1$2, show2$2, showAct$2, maxDepth$2) => ((a, b) => $m_Lcaos_sos_StrongBisim$().findBisimPP__O__O__F1__F1__F1__Lcaos_sos_SOS__Lcaos_sos_SOS__I__T(a, b, show1$2, show2$2, showAct$2, sos1$2, sos2$2, maxDepth$2)))(this, sos1, sos2, show1, show2, showAct, maxDepth)), $m_Lcaos_view_Text$(), pre1, pre2)
+});
 $c_Lcaos_frontend_Configurator$.prototype.toExampleDesc__T2__Lcaos_frontend_Configurator$Example = (function(nameCodeDesc) {
   var example = $as_T($as_T2(nameCodeDesc._1__O())._2__O());
   var name = $as_T($as_T2(nameCodeDesc._1__O())._1__O());
@@ -2155,7 +2158,7 @@ $c_Lcaos_sos_Bisimulation.prototype.pp__Lcaos_sos_Bisimulation$BError__F1__F1__F
       var this$4 = x58.map__F1__sci_List(showAct).reverse__sci_List();
       var $$x1 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$4, "", ",", "")
     };
-    return ((((((((("after " + $$x1) + "\n   + ") + $ps_Lcaos_sos_Bisimulation__show$1__F1__F1__O__T(showA, showB, x59)) + " can do ") + showAct.apply__O__O(x57)) + "\n   + ") + $ps_Lcaos_sos_Bisimulation__show$1__F1__F1__O__T(showA, showB, x60)) + " cannot do \u03c4*,") + showAct.apply__O__O(x57))
+    return ((((((((("after " + $$x1) + "\n   + ") + $ps_Lcaos_sos_Bisimulation__show$1__F1__F1__O__T(showA, showB, x59)) + " can do ") + showAct.apply__O__O(x57)) + "\n   + ") + $ps_Lcaos_sos_Bisimulation__show$1__F1__F1__O__T(showA, showB, x60)) + " cannot do ") + this.wrapWeak__T__T($as_T(showAct.apply__O__O(x57))))
   };
   if (((b instanceof $c_Lcaos_sos_Bisimulation$BError$CanAccept) && ($as_Lcaos_sos_Bisimulation$BError$CanAccept(b).Lcaos_sos_Bisimulation$BError$CanAccept__f_$outer === this.Lcaos_sos_Bisimulation__f_BError$lzy1))) {
     var x$1$1 = $as_Lcaos_sos_Bisimulation$BError$CanAccept(b);
@@ -2177,15 +2180,18 @@ $c_Lcaos_sos_Bisimulation.prototype.pp__Lcaos_sos_Bisimulation$BError__F1__F1__F
   };
   throw new $c_s_MatchError(b)
 });
+$c_Lcaos_sos_Bisimulation.prototype.wrapWeak__T__T = (function(act) {
+  return ("\u03c4*," + act)
+});
 $c_Lcaos_sos_Bisimulation.prototype.pp__s_util_Either__F1__F1__F1__T = (function(res, showG, showL, showA) {
   if ((res instanceof $c_s_util_Left)) {
     var x73 = $as_Lcaos_sos_Bisimulation$BEvid($as_s_util_Left(res).s_util_Left__f_value);
     if (((x73 !== null) && (x73.Lcaos_sos_Bisimulation$BEvid__f_$outer === this))) {
       var this$4 = $as_sc_IterableOnceOps(x73.Lcaos_sos_Bisimulation$BEvid__f_msgs.map__F1__O(new $c_sjsr_AnonFunction1(((this$1, showG$2, showL$2, showA$2) => ((m) => {
         var m$1 = $as_sci_List(m);
-        var f = ((this$2, showG$1$2, showL$1$2, showA$2$2) => ((_$3) => {
-          var _$3$1 = $as_Lcaos_sos_Bisimulation$BError(_$3);
-          return ("\n - " + this$2.pp__Lcaos_sos_Bisimulation$BError__F1__F1__F1__T(_$3$1, showG$1$2, showL$1$2, showA$2$2))
+        var f = ((this$2, showG$1$2, showL$1$2, showA$2$2) => ((_$4) => {
+          var _$4$1 = $as_Lcaos_sos_Bisimulation$BError(_$4);
+          return ("\n - " + this$2.pp__Lcaos_sos_Bisimulation$BError__F1__F1__F1__T(_$4$1, showG$1$2, showL$1$2, showA$2$2))
         }))(this$1, showG$2, showL$2, showA$2);
         if ((m$1 === $m_sci_Nil$())) {
           var this$3 = $m_sci_Nil$()
@@ -2253,9 +2259,9 @@ $c_Lcaos_sos_Bisimulation.prototype.pp__sci_Map__F1__F1__F1__T = (function(rel, 
   var ord4 = $m_s_math_Ordering$String$();
   var ord = new $c_s_math_Ordering$Tuple4Ordering(ord1, ord2, ord3, ord4);
   var strs = $as_sci_List($f_sc_SeqOps__sorted__s_math_Ordering__O(this$7, ord));
-  var f$1 = ((_$4) => {
-    var _$4$1 = $as_T4(_$4);
-    var x = $as_T(_$4$1.T4__f__2);
+  var f$1 = ((_$5) => {
+    var _$5$1 = $as_T4(_$5);
+    var x = $as_T(_$5$1.T4__f__2);
     return $uI(x.length)
   });
   if ((strs === $m_sci_Nil$())) {
@@ -17219,6 +17225,413 @@ function $m_Lcaos_sos_BranchBisim$() {
   };
   return $n_Lcaos_sos_BranchBisim$
 }
+function $p_Lcaos_sos_StrongBisim$__findWBisim2Aux__sci_Map__sci_Map__sci_Set__sci_List__I__Lcaos_sos_SOS__Lcaos_sos_SOS__I__s_util_Either($thiz, visited, missing, triedHash, history, i, gs, ls, stopAt) {
+  var missing$tailLocal1 = missing;
+  while (true) {
+    if ((i >= stopAt)) {
+      $m_s_package$();
+      var $$x2 = $thiz.Lcaos_sos_Bisimulation__f_BEvid$lzy1;
+      var this$2 = $m_s_Predef$().s_Predef$__f_Set;
+      var $$x1 = $m_sr_ScalaRunTime$();
+      $m_s_package$();
+      var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_sos_Bisimulation$BError.getArrayOf().constr)([$thiz.Lcaos_sos_Bisimulation__f_BError$lzy1.Lcaos_sos_Bisimulation$BError$__f_Timeout$lzy1.apply__sci_Map__sci_Map__Lcaos_sos_Bisimulation$BError$Timeout(visited, missing$tailLocal1)]));
+      var elems$1 = $$x1.wrapRefArray__AO__sci_ArraySeq(new ($d_sci_List.getArrayOf().constr)([$m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems)]));
+      var value = $$x2.apply__sci_Set__sci_Set__I__Lcaos_sos_Bisimulation$BEvid(this$2.from__sc_IterableOnce__sci_Set(elems$1), triedHash, i);
+      return new $c_s_util_Left(value)
+    };
+    var this$4 = missing$tailLocal1;
+    var x36 = $f_sc_IterableOps__headOption__s_Option(this$4);
+    var x = $m_s_None$();
+    if ((x === x36)) {
+      $m_s_package$();
+      return new $c_s_util_Right(visited)
+    };
+    if ((x36 instanceof $c_s_Some)) {
+      var x53 = $as_s_Some(x36);
+      var x54 = $m_s_Some$().unapply__s_Some__s_Option(x53);
+      if ((!x54.isEmpty__Z())) {
+        var x55 = $as_T2(x54.get__O());
+        var ab = $as_T2(x55._1__O());
+        $as_sci_List(x55._2__O());
+        if (visited.contains__O__Z(ab)) {
+          var this$6 = missing$tailLocal1;
+          missing$tailLocal1 = $as_sci_Map(this$6.removed__O__sci_MapOps(ab));
+          continue
+        }
+      };
+      var x46 = $as_T2(x53.s_Some__f_value);
+      if ((x46 !== null)) {
+        var x47 = $as_T2(x46._1__O());
+        var x48 = $as_sci_List(x46._2__O());
+        if ((x47 !== null)) {
+          var x49 = x47._1__O();
+          var x50 = x47._2__O();
+          if ((x49 !== null)) {
+            if ((x50 !== null)) {
+              if ((($as_Lccs_syntax_Program$System(x49), false) !== ($as_Lccs_syntax_Program$System(x50), false))) {
+                if (($as_Lccs_syntax_Program$System(x49), false)) {
+                  $m_s_package$();
+                  var $$x4 = $thiz.Lcaos_sos_Bisimulation__f_BEvid$lzy1;
+                  var this$8 = $m_s_Predef$().s_Predef$__f_Set;
+                  var $$x3 = $m_sr_ScalaRunTime$();
+                  $m_s_package$();
+                  var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_sos_Bisimulation$BError.getArrayOf().constr)([$thiz.Lcaos_sos_Bisimulation__f_BError$lzy1.Lcaos_sos_Bisimulation$BError$__f_CanAccept$lzy1.apply__sci_List__O__O__Lcaos_sos_Bisimulation$BError$CanAccept(x48, x49, x50)]));
+                  var elems$3 = $$x3.wrapRefArray__AO__sci_ArraySeq(new ($d_sci_List.getArrayOf().constr)([$m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2)]));
+                  var value$1 = $$x4.apply__sci_Set__sci_Set__I__Lcaos_sos_Bisimulation$BEvid(this$8.from__sc_IterableOnce__sci_Set(elems$3), triedHash, i);
+                  return new $c_s_util_Left(value$1)
+                } else {
+                  $m_s_package$();
+                  var $$x6 = $thiz.Lcaos_sos_Bisimulation__f_BEvid$lzy1;
+                  var this$11 = $m_s_Predef$().s_Predef$__f_Set;
+                  var $$x5 = $m_sr_ScalaRunTime$();
+                  $m_s_package$();
+                  var elems$4 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_sos_Bisimulation$BError.getArrayOf().constr)([$thiz.Lcaos_sos_Bisimulation__f_BError$lzy1.Lcaos_sos_Bisimulation$BError$__f_CanAccept$lzy1.apply__sci_List__O__O__Lcaos_sos_Bisimulation$BError$CanAccept(x48, x50, x49)]));
+                  var elems$5 = $$x5.wrapRefArray__AO__sci_ArraySeq(new ($d_sci_List.getArrayOf().constr)([$m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$4)]));
+                  var value$2 = $$x6.apply__sci_Set__sci_Set__I__Lcaos_sos_Bisimulation$BEvid(this$11.from__sc_IterableOnce__sci_Set(elems$5), triedHash, i);
+                  return new $c_s_util_Left(value$2)
+                }
+              };
+              matchResult1: {
+                var moreGL;
+                var x1 = $p_Lcaos_sos_StrongBisim$__collectMore__O__O__sci_List__Lcaos_sos_SOS__Lcaos_sos_SOS__s_util_Either($thiz, x49, x50, x48, gs, ls);
+                if ((x1 instanceof $c_s_util_Left)) {
+                  var err = $as_sci_List($as_s_util_Left(x1).s_util_Left__f_value);
+                  $m_s_package$();
+                  var $$x7 = $thiz.Lcaos_sos_Bisimulation__f_BEvid$lzy1;
+                  var this$13 = $m_s_Predef$().s_Predef$__f_Set;
+                  var elems$6 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_sci_List.getArrayOf().constr)([err]));
+                  var value$3 = $$x7.apply__sci_Set__sci_Set__I__Lcaos_sos_Bisimulation$BEvid(this$13.from__sc_IterableOnce__sci_Set(elems$6), triedHash, i);
+                  return new $c_s_util_Left(value$3)
+                };
+                if ((x1 instanceof $c_s_util_Right)) {
+                  var m = $as_sci_Set($as_s_util_Right(x1).s_util_Right__f_value);
+                  var moreGL = m;
+                  break matchResult1
+                };
+                throw new $c_s_MatchError(x1)
+              };
+              matchResult2: {
+                var moreLG;
+                var x6 = $p_Lcaos_sos_StrongBisim$__collectMore__O__O__sci_List__Lcaos_sos_SOS__Lcaos_sos_SOS__s_util_Either($thiz, x50, x49, x48, ls, gs);
+                if ((x6 instanceof $c_s_util_Left)) {
+                  var err$2 = $as_sci_List($as_s_util_Left(x6).s_util_Left__f_value);
+                  $m_s_package$();
+                  var $$x10 = $thiz.Lcaos_sos_Bisimulation__f_BEvid$lzy1;
+                  var this$16 = $m_s_Predef$().s_Predef$__f_Set;
+                  var $$x9 = $m_sr_ScalaRunTime$();
+                  var f = ((this$15) => ((b) => {
+                    var b$1 = $as_Lcaos_sos_Bisimulation$BError(b);
+                    return this$15.swap__Lcaos_sos_Bisimulation$BError__Lcaos_sos_Bisimulation$BError(b$1)
+                  }))($thiz);
+                  if ((err$2 === $m_sci_Nil$())) {
+                    var $$x8 = $m_sci_Nil$()
+                  } else {
+                    var arg1 = err$2.head__O();
+                    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+                    var t$1 = h;
+                    var rest = $as_sci_List(err$2.tail__O());
+                    while ((rest !== $m_sci_Nil$())) {
+                      var arg1$1 = rest.head__O();
+                      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+                      t$1.sci_$colon$colon__f_next = nx;
+                      t$1 = nx;
+                      rest = $as_sci_List(rest.tail__O())
+                    };
+                    var $$x8 = h
+                  };
+                  var elems$7 = $$x9.wrapRefArray__AO__sci_ArraySeq(new ($d_sci_List.getArrayOf().constr)([$$x8]));
+                  var value$4 = $$x10.apply__sci_Set__sci_Set__I__Lcaos_sos_Bisimulation$BEvid(this$16.from__sc_IterableOnce__sci_Set(elems$7), triedHash, i);
+                  return new $c_s_util_Left(value$4)
+                };
+                if ((x6 instanceof $c_s_util_Right)) {
+                  var m$2 = $as_sci_Set($as_s_util_Right(x6).s_util_Right__f_value);
+                  var moreLG = $p_Lcaos_sos_StrongBisim$__swap__sci_Set__sci_Set($thiz, m$2);
+                  break matchResult2
+                };
+                throw new $c_s_MatchError(x6)
+              };
+              var more = $p_Lcaos_sos_StrongBisim$__and__sci_Set__sci_Set__sci_Set($thiz, moreGL, moreLG);
+              var this$18 = missing$tailLocal1;
+              var _1 = this$18.keySet__sc_Set();
+              var _2 = more.map__F1__O(new $c_sjsr_AnonFunction1(((this$2$1) => ((_$1) => {
+                var _$1$1 = $as_sci_Map(_$1);
+                return _$1$1.keySet__sc_Set()
+              }))($thiz)));
+              var this$21 = $m_s_util_hashing_MurmurHash3$();
+              var h$1 = (-889275714);
+              h$1 = this$21.mix__I__I__I(h$1, $f_T__hashCode__I("Tuple2"));
+              var i$1 = 0;
+              while ((i$1 < 2)) {
+                var $$x11 = h$1;
+                var n = i$1;
+                switch (n) {
+                  case 0: {
+                    var x$1 = _1;
+                    break
+                  }
+                  case 1: {
+                    var x$1 = _2;
+                    break
+                  }
+                  default: {
+                    var x$1;
+                    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), (n + " is out of bounds (min 0, max 1)"))
+                  }
+                };
+                h$1 = this$21.mix__I__I__I($$x11, $m_sr_Statics$().anyHash__O__I(x$1));
+                i$1 = ((1 + i$1) | 0)
+              };
+              var newTry = this$21.finalizeHash__I__I__I(h$1, 2);
+              if (triedHash.contains__O__Z(newTry)) {
+                $m_s_package$();
+                var $$x12 = $thiz.Lcaos_sos_Bisimulation__f_BEvid$lzy1;
+                var this$22 = $m_s_Predef$().s_Predef$__f_Set;
+                var elems$8 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_sci_List.getArrayOf().constr)([]));
+                var value$5 = $$x12.apply__sci_Set__sci_Set__I__Lcaos_sos_Bisimulation$BEvid(this$22.from__sc_IterableOnce__sci_Set(elems$8), triedHash, i);
+                return new $c_s_util_Left(value$5)
+              };
+              var failed = $m_s_None$();
+              var newTries = $as_sci_Set(triedHash.incl__O__sci_SetOps(newTry));
+              var round = i;
+              var go = 1;
+              while (true) {
+                var this$24 = more;
+                if ((!this$24.isEmpty__Z())) {
+                  var m$3 = $as_sci_Map(more.head__O());
+                  matchResult5: {
+                    var self = new $c_T2(x49, x50);
+                    var $$x15 = $as_sci_Map(visited.$plus__T2__sci_MapOps(new $c_T2(self, x48)));
+                    var $$x14 = $as_sci_Map(missing$tailLocal1.$plus$plus__sc_IterableOnce__sc_IterableOps(m$3));
+                    var $$x13 = newTries;
+                    var elem$1 = go;
+                    var x28 = $p_Lcaos_sos_StrongBisim$__findWBisim2Aux__sci_Map__sci_Map__sci_Set__sci_List__I__Lcaos_sos_SOS__Lcaos_sos_SOS__I__s_util_Either($thiz, $$x15, $$x14, $$x13, new $c_sci_$colon$colon(elem$1, history), ((1 + round) | 0), gs, ls, stopAt);
+                    if ((x28 instanceof $c_s_util_Right)) {
+                      var value$6 = $as_sci_Map($as_s_util_Right(x28).s_util_Right__f_value);
+                      $m_s_package$();
+                      return new $c_s_util_Right(value$6)
+                    };
+                    if ((x28 instanceof $c_s_util_Left)) {
+                      var err$3 = $as_Lcaos_sos_Bisimulation$BEvid($as_s_util_Left(x28).s_util_Left__f_value);
+                      var this$29 = err$3.Lcaos_sos_Bisimulation$BEvid__f_msgs;
+                      var x11 = $f_sc_IterableOps__headOption__s_Option(this$29);
+                      if ((x11 instanceof $c_s_Some)) {
+                        var x13 = $as_sci_List($as_s_Some(x11).s_Some__f_value);
+                        if ((x13 instanceof $c_sci_$colon$colon)) {
+                          $as_sci_$colon$colon(x13);
+                          if ((($as_sci_$colon$colon(x13).sci_$colon$colon__f_head instanceof $c_Lcaos_sos_Bisimulation$BError$Timeout) && ($as_Lcaos_sos_Bisimulation$BError$Timeout($as_sci_$colon$colon(x13).sci_$colon$colon__f_head).Lcaos_sos_Bisimulation$BError$Timeout__f_$outer === $thiz.Lcaos_sos_Bisimulation__f_BError$lzy1))) {
+                            var x$1$1 = $as_Lcaos_sos_Bisimulation$BError$Timeout($as_sci_$colon$colon(x13).sci_$colon$colon__f_head);
+                            $m_s_package$();
+                            return new $c_s_util_Left(err$3)
+                          }
+                        }
+                      };
+                      var this$32 = newTries;
+                      var that = err$3.Lcaos_sos_Bisimulation$BEvid__f_tried;
+                      newTries = $as_sci_Set(this$32.concat__sc_IterableOnce__sc_SetOps(that));
+                      round = err$3.Lcaos_sos_Bisimulation$BEvid__f_count;
+                      go = ((1 + go) | 0);
+                      matchResult4: {
+                        var x21 = failed;
+                        var x$3 = $m_s_None$();
+                        if ((x$3 === x21)) {
+                          failed = new $c_s_Some(err$3);
+                          break matchResult4
+                        };
+                        if ((x21 instanceof $c_s_Some)) {
+                          var x23 = $as_Lcaos_sos_Bisimulation$BEvid($as_s_Some(x21).s_Some__f_value);
+                          if ((x23 !== null)) {
+                            var x25 = x23.Lcaos_sos_Bisimulation$BEvid__f_msgs;
+                            var $$x16 = $thiz.Lcaos_sos_Bisimulation__f_BEvid$lzy1;
+                            var that$1 = err$3.Lcaos_sos_Bisimulation$BEvid__f_msgs;
+                            var value$7 = $$x16.apply__sci_Set__sci_Set__I__Lcaos_sos_Bisimulation$BEvid($as_sci_Set(x25.concat__sc_IterableOnce__sc_SetOps(that$1)), newTries, round);
+                            failed = new $c_s_Some(value$7);
+                            break matchResult4
+                          }
+                        };
+                        throw new $c_s_MatchError(x21)
+                      };
+                      var this$36 = more;
+                      more = $as_sci_Set(this$36.excl__O__sci_SetOps(m$3));
+                      break matchResult5
+                    };
+                    throw new $c_s_MatchError(x28)
+                  }
+                } else {
+                  break
+                }
+              };
+              var x33 = failed;
+              if ((x33 instanceof $c_s_Some)) {
+                var err$4 = $as_Lcaos_sos_Bisimulation$BEvid($as_s_Some(x33).s_Some__f_value);
+                $m_s_package$();
+                return new $c_s_util_Left(err$4)
+              };
+              var x$5 = $m_s_None$();
+              if ((x$5 === x33)) {
+                $m_s_package$();
+                return new $c_s_util_Right(visited)
+              };
+              throw new $c_s_MatchError(x33)
+            }
+          }
+        }
+      }
+    };
+    throw new $c_s_MatchError(x36)
+  }
+}
+function $p_Lcaos_sos_StrongBisim$__collectMore__O__O__sci_List__Lcaos_sos_SOS__Lcaos_sos_SOS__s_util_Either($thiz, g, l, t, gs, ls) {
+  var nonLocalReturnKey1 = $ct_O__(new $c_O());
+  try {
+    var elem = $p_Lcaos_sos_StrongBisim$__none__sci_Set($thiz);
+    var more = new $c_sr_ObjectRef(elem);
+    gs.next__Lccs_syntax_Program$System__sci_Set($as_Lccs_syntax_Program$System(g)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this$2) => ((x$1) => {
+      var x$1$1 = $as_T2(x$1);
+      return ((x$1$1 !== null) && (x$1$1._1__O(), x$1$1._2__O(), true))
+    }))($thiz))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$2$1, g$2, l$2, t$2, ls$2, more$2, nonLocalReturnKey1$2) => ((x$1$2) => {
+      var x$1$3 = $as_T2(x$1$2);
+      matchResult12: {
+        if ((x$1$3 !== null)) {
+          var a$1 = x$1$3._1__O();
+          var g2$1 = x$1$3._2__O();
+          var tr = ls$2.next__Lccs_syntax_Program$System__sci_Set($as_Lccs_syntax_Program$System(l$2));
+          var mbMatch = $as_sci_Set(tr.withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this$3) => ((x$1$2$1) => {
+            var x$1$4 = $as_T2(x$1$2$1);
+            return ((x$1$4 !== null) && (x$1$4._1__O(), x$1$4._2__O(), true))
+          }))(this$2$1))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this$2$2, a$2) => ((x$1$3$1) => {
+            var x$1$5 = $as_T2(x$1$3$1);
+            if ((x$1$5 !== null)) {
+              var a2$1 = x$1$5._1__O();
+              x$1$5._2__O();
+              return $m_sr_BoxesRunTime$().equals__O__O__Z(a$2, a2$1)
+            };
+            throw new $c_s_MatchError(x$1$5)
+          }))(this$2$1, a$1))).map__F1__O(new $c_sjsr_AnonFunction1(((this$3$1, t$1$2, a$3, g2$2) => ((x$1$4$1) => {
+            var x$1$6 = $as_T2(x$1$4$1);
+            if ((x$1$6 !== null)) {
+              x$1$6._1__O();
+              var l2$2 = x$1$6._2__O();
+              return $p_Lcaos_sos_StrongBisim$__one__O__O__sci_List__sci_Set(this$3$1, g2$2, l2$2, new $c_sci_$colon$colon(a$3, t$1$2))
+            };
+            throw new $c_s_MatchError(x$1$6)
+          }))(this$2$1, t$2, a$1, g2$1))));
+          if (mbMatch.isEmpty__Z()) {
+            $m_s_package$();
+            $m_s_package$();
+            var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_sos_Bisimulation$BError.getArrayOf().constr)([this$2$1.Lcaos_sos_Bisimulation__f_BError$lzy1.Lcaos_sos_Bisimulation$BError$__f_CanDo$lzy1.apply__O__sci_List__O__O__Lcaos_sos_Bisimulation$BError$CanDo(a$1, t$2, g$2, l$2)]));
+            var value = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+            throw new $c_sr_NonLocalReturnControl(nonLocalReturnKey1$2, new $c_s_util_Left(value))
+          };
+          var $$x1 = $as_sci_Set(more$2.sr_ObjectRef__f_elem);
+          var this$7 = $m_s_$less$colon$less$();
+          var ev$5 = $p_Lcaos_sos_StrongBisim$__and__sci_Set__sci_Set__sci_Set(this$2$1, $$x1, $as_sci_Set(mbMatch.flatten__F1__O(this$7.s_$less$colon$less$__f_singleton)));
+          more$2.sr_ObjectRef__f_elem = ev$5;
+          break matchResult12
+        };
+        throw new $c_s_MatchError(x$1$3)
+      }
+    }))($thiz, g, l, t, ls, more, nonLocalReturnKey1)));
+    $m_s_package$();
+    var value$1 = $as_sci_Set(more.sr_ObjectRef__f_elem);
+    return new $c_s_util_Right(value$1)
+  } catch (e) {
+    if ((e instanceof $c_sr_NonLocalReturnControl)) {
+      var ex = $as_sr_NonLocalReturnControl(e);
+      if ((ex.sr_NonLocalReturnControl__f_key === nonLocalReturnKey1)) {
+        return $as_s_util_Either(ex.sr_NonLocalReturnControl__f_value)
+      } else {
+        throw ex
+      }
+    } else {
+      throw e
+    }
+  }
+}
+function $p_Lcaos_sos_StrongBisim$__one__O__O__sci_List__sci_Set($thiz, g, l, t) {
+  var this$5 = $m_s_Predef$().s_Predef$__f_Set;
+  var $$x2 = $m_sr_ScalaRunTime$();
+  var this$4 = $m_s_Predef$().s_Predef$__f_Map;
+  var $$x1 = $m_sr_ScalaRunTime$();
+  var self = new $c_T2(g, l);
+  var elems = $$x1.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, t)]));
+  var elems$1 = $$x2.wrapRefArray__AO__sci_ArraySeq(new ($d_sci_Map.getArrayOf().constr)([this$4.from__sc_IterableOnce__sci_Map(elems)]));
+  return this$5.from__sc_IterableOnce__sci_Set(elems$1)
+}
+function $p_Lcaos_sos_StrongBisim$__none__sci_Set($thiz) {
+  var this$2 = $m_s_Predef$().s_Predef$__f_Set;
+  var $$x1 = $m_sr_ScalaRunTime$();
+  var this$1 = $m_s_Predef$().s_Predef$__f_Map;
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+  var elems$1 = $$x1.wrapRefArray__AO__sci_ArraySeq(new ($d_sci_Map.getArrayOf().constr)([this$1.from__sc_IterableOnce__sci_Map(elems)]));
+  return this$2.from__sc_IterableOnce__sci_Set(elems$1)
+}
+function $p_Lcaos_sos_StrongBisim$__and__sci_Set__sci_Set__sci_Set($thiz, x, y) {
+  return $as_sci_Set(x.flatMap__F1__O(new $c_sjsr_AnonFunction1(((this$1, y$2) => ((m1) => {
+    var m1$1 = $as_sci_Map(m1);
+    return $as_sc_IterableOnce(y$2.map__F1__O(new $c_sjsr_AnonFunction1(((this$2, m1$2) => ((m2) => {
+      var m2$1 = $as_sci_Map(m2);
+      return $as_sci_Map(m1$2.$plus$plus__sc_IterableOnce__sc_IterableOps(m2$1))
+    }))(this$1, m1$1))))
+  }))($thiz, y))))
+}
+function $p_Lcaos_sos_StrongBisim$__swap__sci_Set__sci_Set($thiz, x) {
+  return $as_sci_Set(x.map__F1__O(new $c_sjsr_AnonFunction1(((this$1) => ((_$3) => {
+    var _$3$1 = $as_sci_Map(_$3);
+    return $as_sci_Map(_$3$1.map__F1__sc_IterableOps(new $c_sjsr_AnonFunction1(((this$2) => ((tpl) => {
+      var tpl$1 = $as_T2(tpl);
+      var _1 = $as_T2(tpl$1._1__O())._2__O();
+      var _2 = $as_T2(tpl$1._1__O())._1__O();
+      var _1$1 = new $c_T2(_1, _2);
+      var _2$1 = tpl$1._2__O();
+      return new $c_T2(_1$1, _2$1)
+    }))(this$1))))
+  }))($thiz))))
+}
+/** @constructor */
+function $c_Lcaos_sos_StrongBisim$() {
+  this.Lcaos_sos_Bisimulation__f_BEvid$lzy1 = null;
+  this.Lcaos_sos_Bisimulation__f_BError$lzy1 = null;
+  $ct_Lcaos_sos_Bisimulation__(this)
+}
+$c_Lcaos_sos_StrongBisim$.prototype = new $h_Lcaos_sos_Bisimulation();
+$c_Lcaos_sos_StrongBisim$.prototype.constructor = $c_Lcaos_sos_StrongBisim$;
+/** @constructor */
+function $h_Lcaos_sos_StrongBisim$() {
+  /*<skip>*/
+}
+$h_Lcaos_sos_StrongBisim$.prototype = $c_Lcaos_sos_StrongBisim$.prototype;
+$c_Lcaos_sos_StrongBisim$.prototype.wrapWeak__T__T = (function(act) {
+  return act
+});
+$c_Lcaos_sos_StrongBisim$.prototype.findBisim__O__O__Lcaos_sos_SOS__Lcaos_sos_SOS__I__s_util_Either = (function(g, l, gs, ls, stopAt) {
+  var this$1 = $m_s_Predef$().s_Predef$__f_Map;
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+  var $$x3 = this$1.from__sc_IterableOnce__sci_Map(elems);
+  var this$5 = $m_s_Predef$().s_Predef$__f_Map;
+  var $$x1 = $m_sr_ScalaRunTime$();
+  var self = new $c_T2(g, l);
+  var y = $m_s_package$().s_package$__f_Nil;
+  var elems$1 = $$x1.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y)]));
+  var $$x2 = this$5.from__sc_IterableOnce__sci_Map(elems$1);
+  var this$6 = $m_s_Predef$().s_Predef$__f_Set;
+  var elems$2 = $m_sr_ScalaRunTime$().wrapIntArray__AI__sci_ArraySeq(new $ac_I(new Int32Array([])));
+  return $p_Lcaos_sos_StrongBisim$__findWBisim2Aux__sci_Map__sci_Map__sci_Set__sci_List__I__Lcaos_sos_SOS__Lcaos_sos_SOS__I__s_util_Either(this, $$x3, $$x2, this$6.from__sc_IterableOnce__sci_Set(elems$2), $m_s_package$().s_package$__f_Nil, 1, gs, ls, stopAt)
+});
+var $d_Lcaos_sos_StrongBisim$ = new $TypeData().initClass({
+  Lcaos_sos_StrongBisim$: 0
+}, false, "caos.sos.StrongBisim$", {
+  Lcaos_sos_StrongBisim$: 1,
+  Lcaos_sos_Bisimulation: 1,
+  O: 1
+});
+$c_Lcaos_sos_StrongBisim$.prototype.$classData = $d_Lcaos_sos_StrongBisim$;
+var $n_Lcaos_sos_StrongBisim$;
+function $m_Lcaos_sos_StrongBisim$() {
+  if ((!$n_Lcaos_sos_StrongBisim$)) {
+    $n_Lcaos_sos_StrongBisim$ = new $c_Lcaos_sos_StrongBisim$()
+  };
+  return $n_Lcaos_sos_StrongBisim$
+}
 /** @constructor */
 function $c_Lcats_Eval() {
   /*<skip>*/
@@ -17913,12 +18326,12 @@ function $c_Lccs_frontend_CaosConfig$() {
   var elems = $$x12.wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([$$x11, $$x10, $$x9, $$x8, $$x7, $$x6, $$x5, $$x3, $$x1, new $c_Lcaos_frontend_Configurator$Example(example$7, name$7, "")]));
   this.Lccs_frontend_CaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
   $m_s_package$();
-  var $$x17 = $m_sr_ScalaRunTime$();
+  var $$x18 = $m_sr_ScalaRunTime$();
   var y = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$2$1) => ((_$1) => {
     var _$1$1 = $as_Lccs_syntax_Program$System(_$1);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$System__T(_$1$1)
   }))(this)), new $c_Lcaos_view_Code("haskell"));
-  var $$x16 = new $c_T2("View pretty data", y);
+  var $$x17 = new $c_T2("View pretty data", y);
   var y$1 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$3$1) => ((e) => {
     var e$1 = $as_Lccs_syntax_Program$System(e);
     return e$1
@@ -17930,7 +18343,7 @@ function $c_Lccs_frontend_CaosConfig$() {
     var _$2$1 = $as_Lccs_syntax_Program$Action(_$2);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$2$1)
   }))(this)), $m_Lcaos_view_Text$());
-  var $$x15 = new $c_T2("Run semantics", y$1);
+  var $$x16 = new $c_T2("Run semantics", y$1);
   var this$51 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$6$1) => ((e$2) => {
     var e$3 = $as_Lccs_syntax_Program$System(e$2);
     return e$3
@@ -17943,7 +18356,7 @@ function $c_Lccs_frontend_CaosConfig$() {
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$3$1)
   }))(this)), 80);
   var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$51);
-  var $$x14 = new $c_T2("Build LTS", y$2);
+  var $$x15 = new $c_T2("Build LTS", y$2);
   var initialSt = new $c_sjsr_AnonFunction1(((this$9$1) => ((e$3$1) => {
     var e$4 = $as_Lccs_syntax_Program$System(e$3$1);
     return e$4
@@ -17958,7 +18371,7 @@ function $c_Lccs_frontend_CaosConfig$() {
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$4$1)
   }))(this));
   var y$3 = new $c_Lcaos_frontend_widgets_WidgetInfo$Explore(initialSt, sos, viewSt, viewAct);
-  var $$x13 = new $c_T2("Build LTS (explore)", y$3);
+  var $$x14 = new $c_T2("Build LTS (explore)", y$3);
   var y$4 = $m_Lcaos_frontend_Configurator$().compareBranchBisim__Lcaos_sos_SOS__Lcaos_sos_SOS__F1__F1__F1__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo($m_Lccs_backend_Semantics$(), $m_Lccs_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$12$1) => ((e$4$1) => {
     var e$5 = $as_Lccs_syntax_Program$System(e$4$1);
     var defs = e$5.Lccs_syntax_Program$System__f_defs;
@@ -17985,26 +18398,55 @@ function $c_Lccs_frontend_CaosConfig$() {
     var _$5$1 = $as_Lccs_syntax_Program$Action(_$5);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$5$1)
   }))(this)), 5000);
-  var elems$1 = $$x17.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x16, $$x15, $$x14, $$x13, new $c_T2("Find branching bisimulation (given a program \"A ~ B\")", y$4)]));
+  var $$x13 = new $c_T2("Find branching bisimulation (given a program \"A ~ B\")", y$4);
+  var y$5 = $m_Lcaos_frontend_Configurator$().compareStrongBisim__Lcaos_sos_SOS__Lcaos_sos_SOS__F1__F1__F1__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo($m_Lccs_backend_Semantics$(), $m_Lccs_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$17$1) => ((e$6$1) => {
+    var e$7 = $as_Lccs_syntax_Program$System(e$6$1);
+    var defs$2 = e$7.Lccs_syntax_Program$System__f_defs;
+    var main$2 = e$7.Lccs_syntax_Program$System__f_main;
+    var toCompare$2 = $m_s_None$();
+    return new $c_Lccs_syntax_Program$System(defs$2, main$2, toCompare$2)
+  }))(this)), new $c_sjsr_AnonFunction1(((this$18$1) => ((e$7$1) => {
+    var e$8 = $as_Lccs_syntax_Program$System(e$7$1);
+    var defs$3 = e$8.Lccs_syntax_Program$System__f_defs;
+    var this$68 = e$8.Lccs_syntax_Program$System__f_toCompare;
+    var default$2 = new $c_sjsr_AnonFunction0(((this$67) => (() => $s_Lccs_syntax_Program$Term$__End__Lccs_syntax_Program$Term()))(this$18$1));
+    var main$3 = $as_Lccs_syntax_Program$Term((this$68.isEmpty__Z() ? default$2.apply__O() : this$68.get__O()));
+    var toCompare$3 = $m_s_None$();
+    return new $c_Lccs_syntax_Program$System(defs$3, main$3, toCompare$3)
+  }))(this)), new $c_sjsr_AnonFunction1(((this$19$1) => ((s$5$1) => {
+    var s$6 = $as_Lccs_syntax_Program$System(s$5$1);
+    var this$70 = $m_Lccs_syntax_Show$();
+    return this$70.apply__Lccs_syntax_Program$Term__T(s$6.Lccs_syntax_Program$System__f_main)
+  }))(this)), new $c_sjsr_AnonFunction1(((this$20$1) => ((s$6$1) => {
+    var s$7 = $as_Lccs_syntax_Program$System(s$6$1);
+    var this$71 = $m_Lccs_syntax_Show$();
+    return this$71.apply__Lccs_syntax_Program$Term__T(s$7.Lccs_syntax_Program$System__f_main)
+  }))(this)), new $c_sjsr_AnonFunction1(((this$21$1) => ((_$6) => {
+    var _$6$1 = $as_Lccs_syntax_Program$Action(_$6);
+    return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$6$1)
+  }))(this)), 5000);
+  var elems$1 = $$x18.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x17, $$x16, $$x15, $$x14, $$x13, new $c_T2("Find strong bisimulation (given a program \"A ~ B\")", y$5)]));
   this.Lccs_frontend_CaosConfig$__f_widgets = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1);
   this.Lccs_frontend_CaosConfig$__f_footer = $m_sc_StringOps$().stripMargin$extension__T__C__T("Simple animator of Milner's CCS calculus for concurrent systems, meant both for teaching CCS and to exemplify the\n      | CAOS libraries, used to generate this website. Source code available online:\n      | <a target=\"_blank\" href=\"https://github.com/arcalab/ccs-caos\">\n      | https://github.com/arcalab/ccs-caos</a> (CCS),\n      | <a target=\"_blank\" href=\"https://github.com/arcalab/CAOS\">\n      | https://github.com/arcalab/CAOS</a> (CAOS).", 124);
   var ccsRules = $m_sc_StringOps$().stripMargin$extension__T__C__T("The operational rules that we use to reduce a CCS term are provided below.\n      | They can also be found, for example, in the slides available at\n      | <a target=\"_blank\" href=\"https://lmf.di.uminho.pt/CyPhyComp2223/slides/2-behaviour.pdf#page=27\">\n      | https://lmf.di.uminho.pt/CyPhyComp2223/slides/2-behaviour.pdf#page=27</a>.\n      |\n      |<pre>\n      |  --------------------(act)\n      |  label.P --label--> P\n      |\n      |    P1 --label--> P'\n      |  --------------------(sum-1)\n      |  P1 + P2 --label-> P'\n      |\n      |    P2 --label--> P'\n      |  --------------------(sum-2)\n      |  P1 + P2 --label-> P'\n      |\n      |      P1 --label--> P'\n      |  -------------------------(com-1)\n      |  P1 | P2 --label-> P' | P2\n      |\n      |      P2 --label--> P'\n      |  -------------------------(com-2)\n      |  P1 | P2 --label-> P1 | P'\n      |\n      |  P1 --a--> P1'  P2 --a'--> P2'\n      |  -----------------------------(com-3)\n      |    P1 | P2 --tau-> P1' | P2'\n      |\n      |  P --a--> P'  a,a' not in L\n      |  --------------------------(rest)\n      |       P\\L --label-> P'\\L\n      |</pre>", 124);
-  var $$x23 = $m_Lcaos_frontend_Configurator$();
+  var $$x25 = $m_Lcaos_frontend_Configurator$();
   $m_s_package$();
-  var $$x22 = $m_sr_ScalaRunTime$();
+  var $$x24 = $m_sr_ScalaRunTime$();
   var self$2 = this.Lccs_frontend_CaosConfig$__f_languageName;
   var self$3 = new $c_T2(self$2, "More information on the syntax of CCS");
-  var y$5 = $m_sc_StringOps$().stripMargin$extension__T__C__T("A program <code>prog</code> in CCS is given by the following grammar:\n        |<pre>\n        |  prog ::= term\n        |         | \"let\" (ProcName \"=\" term \";\")* \"in\" term\n        |  term ::= 0\n        |         | ProcName\n        |         | LabelName\n        |         | LabelName \".\" term\n        |         | term \"+\" term\n        |         | term \"|\" term\n        |         | term \"\\\" \"{\" ActionName (\",\" ActionName)* \"}\"\n        |</pre>\n        |\n        |The pseudo-terminal <code>ProcName</code> is a string that starts with an upper-case letter,\n        |<code>ActionName</code> is a string that starts with a lower-case letter, and\n        |<code>LabelName</code> is an <code>ActionName</code>, possibly followed by a prime (<code>'</code>),\n        |or the keyword <code>\"tau\"</code>.\n        |", 124);
-  var $$x21 = new $c_T2(self$3, y$5);
+  var y$6 = $m_sc_StringOps$().stripMargin$extension__T__C__T("A program <code>prog</code> in CCS is given by the following grammar:\n        |<pre>\n        |  prog ::= term\n        |         | \"let\" (ProcName \"=\" term \";\")* \"in\" term\n        |  term ::= 0\n        |         | ProcName\n        |         | LabelName\n        |         | LabelName \".\" term\n        |         | term \"+\" term\n        |         | term \"|\" term\n        |         | term \"\\\" \"{\" ActionName (\",\" ActionName)* \"}\"\n        |</pre>\n        |\n        |The pseudo-terminal <code>ProcName</code> is a string that starts with an upper-case letter,\n        |<code>ActionName</code> is a string that starts with a lower-case letter, and\n        |<code>LabelName</code> is an <code>ActionName</code>, possibly followed by a prime (<code>'</code>),\n        |or the keyword <code>\"tau\"</code>.\n        |", 124);
+  var $$x23 = new $c_T2(self$3, y$6);
   var self$4 = new $c_T2("Build LTS", "More information on the operational rules used here");
-  var $$x20 = new $c_T2(self$4, ccsRules);
+  var $$x22 = new $c_T2(self$4, ccsRules);
   var self$5 = new $c_T2("Build LTS (explore)", "More information on the operational rules used here");
-  var $$x19 = new $c_T2(self$5, ccsRules);
+  var $$x21 = new $c_T2(self$5, ccsRules);
   var self$6 = new $c_T2("Run semantics", "More information on the operational rules used here");
-  var $$x18 = new $c_T2(self$6, ccsRules);
+  var $$x20 = new $c_T2(self$6, ccsRules);
   var self$7 = new $c_T2("Find branching bisimulation (given a program \"A ~ B\")", "More information on this widget");
-  var elems$2 = $$x22.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x21, $$x20, $$x19, $$x18, new $c_T2(self$7, "<p>When the main program consists of 2 processes separated by <code>~</code>, this widget will search for a (branching) bisimulation between these 2 processes, providing either a concrete bisimulation or an explanation of where it failed.</p><p>When only a process is mentioned in the program, it checks if it is bisimilar to the empty process <code>0</code>.</p>")]));
-  this.Lccs_frontend_CaosConfig$__f_documentation = $$x23.toDocumentation__sci_List__Lcaos_frontend_Documentation($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2))
+  var $$x19 = new $c_T2(self$7, "<p>When the main program consists of 2 processes separated by <code>~</code>, this widget will search for a (branching) bisimulation between these 2 processes, providing either a concrete bisimulation or an explanation of where it failed.</p><p>When only a process is mentioned in the program, it checks if it is bisimilar to the empty process <code>0</code>.</p>");
+  var self$8 = new $c_T2("Find strong bisimulation (given a program \"A ~ B\")", "More information on this widget");
+  var elems$2 = $$x24.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x23, $$x22, $$x21, $$x20, $$x19, new $c_T2(self$8, "<p>When the main program consists of 2 processes separated by <code>~</code>, this widget will search for a (strong) bisimulation between these 2 processes, providing either a concrete bisimulation or an explanation of where it failed.</p><p>When only a process is mentioned in the program, it checks if it is bisimilar to the empty process <code>0</code>.</p>")]));
+  this.Lccs_frontend_CaosConfig$__f_documentation = $$x25.toDocumentation__sci_List__Lcaos_frontend_Documentation($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2))
 }
 $c_Lccs_frontend_CaosConfig$.prototype = new $h_O();
 $c_Lccs_frontend_CaosConfig$.prototype.constructor = $c_Lccs_frontend_CaosConfig$;
