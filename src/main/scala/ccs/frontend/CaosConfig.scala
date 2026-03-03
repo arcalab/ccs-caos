@@ -53,6 +53,11 @@ object CaosConfig extends Configurator[System]:
         (e: System) => System(e.defs, e.main, None),
         (e: System) => System(e.defs, e.toCompare.getOrElse(Program.Term.End), None),
         Show.justTerm, Show.justTerm, Show(_)),
+    "Find trace equivalence (given a program \"A ~ B\" - experimental)" ->
+      compareTraceEq(Semantics, Semantics,
+        (e: System) => System(e.defs, e.main, None),
+        (e: System) => System(e.defs, e.toCompare.getOrElse(Program.Term.End), None)
+        ),
   )
 
   //// Documentation below

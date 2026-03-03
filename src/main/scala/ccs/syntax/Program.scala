@@ -20,7 +20,8 @@ object Program:
     case Rename(t:Term, f:String=>String)
     case Restr(t:Term, acts:Set[String])
 
-  trait Action extends HasTaus
+  trait Action extends HasTaus:
+    override def toString(): String = Show(this)
   case class Out(a:String) extends Action:
     val isTau = false
   case class In(a:String) extends Action:

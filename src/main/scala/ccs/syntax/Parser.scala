@@ -101,6 +101,7 @@ object Parser :
     procName.map(Proc.apply)
 
   def pref(t2:P[Term]): P[Term] =
+    (string("tau") *> sps *> char('.') *> t2).map(Prefix(Tau,_)) | 
     (varName ~ (((char('\'')?)<*sps)~ ((sps *> char('.') *> t2)?)))
       .map(x =>
        if x._2._1.isDefined
