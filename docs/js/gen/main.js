@@ -15611,9 +15611,6 @@ function $h_s_util_boundary$() {
   /*<skip>*/
 }
 $h_s_util_boundary$.prototype = $c_s_util_boundary$.prototype;
-$c_s_util_boundary$.prototype.break__O__s_util_boundary$Label__E = (function(value, label) {
-  throw new $c_s_util_boundary$Break(label, value)
-});
 $c_s_util_boundary$.prototype.break__s_util_boundary$Label__E = (function(label) {
   throw new $c_s_util_boundary$Break(label, (void 0))
 });
@@ -18345,10 +18342,14 @@ function $p_Lcaos_sos_BranchBisim$__findWBisim2Aux__sci_Map__sci_Map__sci_Set__s
 function $p_Lcaos_sos_BranchBisim$__collectMore__O__O__sci_List__Lcaos_sos_SOS__Lcaos_sos_SOS__s_util_Either($thiz, g, l, t, gs, ls) {
   var elem = $p_Lcaos_sos_BranchBisim$__none__sci_Set($thiz);
   var more = new $c_sr_ObjectRef(elem);
+  $n($m_s_package$().s_package$__f_Right);
+  var value = $as_sci_Set(more.sr_ObjectRef__f_elem);
+  var elem$1 = new $c_s_util_Right(value);
+  var res = new $c_sr_ObjectRef(elem$1);
   var local = new $c_s_util_boundary$Label();
   try {
-    var this$2 = $n(gs);
-    $n($n(this$2.next__Lccs_syntax_Program$System__sci_Set($as_Lccs_syntax_Program$System(g))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
+    var this$4 = $n(gs);
+    $n($n(this$4.next__Lccs_syntax_Program$System__sci_Set($as_Lccs_syntax_Program$System(g))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
       var x$1$1 = $as_T2(x$1);
       return ((x$1$1 !== null) && ($n(x$1$1)._1__O(), $n(x$1$1)._2__O(), true))
     })))).foreach__F1__V(new $c_sjsr_AnonFunction1(((x$1$2) => {
@@ -18383,32 +18384,32 @@ function $p_Lcaos_sos_BranchBisim$__collectMore__O__O__sci_List__Lcaos_sos_SOS__
                 var x = $m_s_None$();
                 if ((x === l3opt$2)) {
                   var $$x1 = $m_Lcaos_sos_BranchBisim$();
-                  var this$5 = $n(t);
-                  return $p_Lcaos_sos_BranchBisim$__one__O__O__sci_List__sci_Set($n($$x1), g2$1, l2$2, new $c_sci_$colon$colon(a$1, this$5))
+                  var this$7 = $n(t);
+                  return $p_Lcaos_sos_BranchBisim$__one__O__O__sci_List__sci_Set($n($$x1), g2$1, l2$2, new $c_sci_$colon$colon(a$1, this$7))
                 };
                 if ((l3opt$2 instanceof $c_s_Some)) {
                   var l3 = $n($as_s_Some(l3opt$2)).s_Some__f_value;
                   var $$x4 = $m_Lcaos_sos_BranchBisim$();
                   var $$x3 = $p_Lcaos_sos_BranchBisim$__one__O__O__sci_List__sci_Set($m_Lcaos_sos_BranchBisim$(), g, l3, t);
                   var $$x2 = $m_Lcaos_sos_BranchBisim$();
-                  var this$6 = $n(t);
-                  return $p_Lcaos_sos_BranchBisim$__and__sci_Set__sci_Set__sci_Set($n($$x4), $$x3, $p_Lcaos_sos_BranchBisim$__one__O__O__sci_List__sci_Set($n($$x2), g2$1, l2$2, new $c_sci_$colon$colon(a$1, this$6)))
+                  var this$8 = $n(t);
+                  return $p_Lcaos_sos_BranchBisim$__and__sci_Set__sci_Set__sci_Set($n($$x4), $$x3, $p_Lcaos_sos_BranchBisim$__one__O__O__sci_List__sci_Set($n($$x2), g2$1, l2$2, new $c_sci_$colon$colon(a$1, this$8)))
                 };
                 throw new $c_s_MatchError(l3opt$2)
               };
               throw new $c_s_MatchError(x$1$6)
             }))));
             if ($n(mbMatch).isEmpty__Z()) {
-              var $$x5 = $m_s_util_boundary$();
               $n($m_s_package$().s_package$__f_Left);
-              var value = new $c_sci_$colon$colon($n($n($m_Lcaos_sos_BranchBisim$().Lcaos_sos_Bisimulation__f_BError$lzy1).Lcaos_sos_Bisimulation$BError$__f_CanDo$lzy1).apply__O__sci_List__O__O__Lcaos_sos_Bisimulation$BError$CanDo(a$1, t, g, l), $m_sci_Nil$());
-              $n($$x5).break__O__s_util_boundary$Label__E(new $c_s_util_Left(value), local)
+              var value$1 = new $c_sci_$colon$colon($n($n($m_Lcaos_sos_BranchBisim$().Lcaos_sos_Bisimulation__f_BError$lzy1).Lcaos_sos_Bisimulation$BError$__f_CanDo$lzy1).apply__O__sci_List__O__O__Lcaos_sos_Bisimulation$BError$CanDo(a$1, t, g, l), $m_sci_Nil$());
+              res.sr_ObjectRef__f_elem = new $c_s_util_Left(value$1);
+              $m_s_util_boundary$().break__s_util_boundary$Label__E(local)
             };
-            var $$x7 = $m_Lcaos_sos_BranchBisim$();
-            var $$x6 = $as_sci_Set(more.sr_ObjectRef__f_elem);
+            var $$x6 = $m_Lcaos_sos_BranchBisim$();
+            var $$x5 = $as_sci_Set(more.sr_ObjectRef__f_elem);
             $m_Lcaos_sos_BranchBisim$();
-            var this$10 = $m_s_$less$colon$less$();
-            more.sr_ObjectRef__f_elem = $p_Lcaos_sos_BranchBisim$__and__sci_Set__sci_Set__sci_Set($n($$x7), $$x6, $as_sci_Set($n(mbMatch).flatten__F1__O(this$10.s_$less$colon$less$__f_singleton)))
+            var this$12 = $m_s_$less$colon$less$();
+            more.sr_ObjectRef__f_elem = $p_Lcaos_sos_BranchBisim$__and__sci_Set__sci_Set__sci_Set($n($$x6), $$x5, $as_sci_Set($n(mbMatch).flatten__F1__O(this$12.s_$less$colon$less$__f_singleton)))
           };
           break matchResult13
         };
@@ -18427,9 +18428,13 @@ function $p_Lcaos_sos_BranchBisim$__collectMore__O__O__sci_List__Lcaos_sos_SOS__
       throw e
     }
   };
-  $n($m_s_package$().s_package$__f_Right);
-  var value$1 = $as_sci_Set(more.sr_ObjectRef__f_elem);
-  return new $c_s_util_Right(value$1)
+  if ($n($as_s_util_Either(res.sr_ObjectRef__f_elem)).isLeft__Z()) {
+    return $as_s_util_Either(res.sr_ObjectRef__f_elem)
+  } else {
+    $n($m_s_package$().s_package$__f_Right);
+    var value$2 = $as_sci_Set(more.sr_ObjectRef__f_elem);
+    return new $c_s_util_Right(value$2)
+  }
 }
 function $p_Lcaos_sos_BranchBisim$__isTau__O__Z($thiz, a) {
   if ($is_Lcaos_sos_HasTaus(a)) {
@@ -40451,6 +40456,9 @@ function $h_s_util_Left() {
   /*<skip>*/
 }
 $h_s_util_Left.prototype = $c_s_util_Left.prototype;
+$c_s_util_Left.prototype.isLeft__Z = (function() {
+  return true
+});
 $c_s_util_Left.prototype.productPrefix__T = (function() {
   return "Left"
 });
@@ -40512,6 +40520,9 @@ function $h_s_util_Right() {
   /*<skip>*/
 }
 $h_s_util_Right.prototype = $c_s_util_Right.prototype;
+$c_s_util_Right.prototype.isLeft__Z = (function() {
+  return false
+});
 $c_s_util_Right.prototype.productPrefix__T = (function() {
   return "Right"
 });
