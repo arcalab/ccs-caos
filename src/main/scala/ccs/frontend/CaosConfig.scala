@@ -27,17 +27,20 @@ object CaosConfig extends Configurator[System]:
     "bisim-1" -> "a.b+b.a ~ a|b" -> "Simple example to check that 2 processes are bisimilar",
     "bisim-2" -> "a.(b.c+b.d) ~ a.b.(c+d)" -> "Simple example of 2 non-bisimilar processes",
     "bisim-coffee" -> "let\n CM = coin.coffee'.CM;\n CS = pub.coin'.coffee.CS;\n P = pub.P;\nin\n (CM|CS)\\{coffee,coin} ~ P",
+    "Peterson" -> "let\n  B1f = b1rf.B1f + b1wf'.B1f + b1wt'.B1t;\n  B1t= b1rt.B1t + b1wf'.B1f + b1wt'.B1t;\n  \n  B2f = b2rf.B2f + b2wf'.B2f + b2wt'.B2t;\n  B2t = b2rt.B2t + b2wf'.B2f + b2wt'.B2t;\n  \n  K1 = kr1.K1 + kw1'.K1 + kw2'.K2;\n  K2 = kr2.K2 + kw1'.K1 + kw2'.K2;\n  \n  P1 = b1wt.kw2.P11;\n  P11 = b2rf'.P12 + b2rt'.(kr2'.P11 + kr1'.P12);\n  P12 = enter1.exit1.b1wf.P1;\n  \n  P2 = b2wt.kw1.P21;\n  P21 = b1rf'.P22 + b1rt'.(kr1'.P21 + kr2'.P22);\n  P22 = enter2.exit2.b2wf.P2;\n  \n  Peterson =\n    (P1 | P2 | B1f | B2f | K1) \\\n      {b1rf, b2rf, b1rt, b2rt, b1wf, b2wf, b1wt, b2wt, kr1, kr2, kw1, kw2};\n\nin\n  Peterson"
+      -> "Peterson's mutual exclusion algorithm, as described in <a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Peterson%27s_algorithm\">https://en.wikipedia.org/wiki/Peterson%27s_algorithm</a>.",
   )
 
   /** Description of the widgets that appear in the dashboard. */
   val widgets = List(
 //    "View parsed data" -> view(_.toString, Text), //.moveTo(1),
-    "View pretty data" -> view[System](Show(_), Code("haskell")), //.moveTo(1),
+    "View pretty data" -> view[System](Show(_), Code("haskell")).moveTo(1),
     // "Diagram of the structure" -> view(Show.mermaid, Mermaid).moveTo(1),
-     "Run semantics" -> steps(e=>e, Semantics, Show.justTerm, Show(_), Text),
+     "Run semantics" -> steps((e:System)=>e, Semantics, Show.justTerm, Show(_), Text).moveTo(1),
     // "Run semantics (with diagrams)" -> steps(e=>e, Semantics, Show.mermaid, Mermaid),
      "Build LTS" -> lts((e:System)=>e, Semantics, Show.justTerm, Show(_)).expand,
-     "Build LTS (explore)" -> ltsExplore(e=>e, Semantics, x=>Show(x.main), Show(_)),
+     "Build LTS (simpler)" -> lts((e:System)=>e, Semantics, _=>"", Show(_)).moveTo(1),
+     "Build LTS (explore)" -> ltsExplore((e:System)=>e, Semantics, x=>Show(x.main), Show(_)).moveTo(1),
     // "Build LTS - Lazy Evaluation" -> lts(e=>e, LazySemantics, Show(_)),
     // "Build LTS - Strict Evaluation" -> lts(e=>e, StrictSemantics, Show(_)),
     "Find branching bisimulation (given a program \"A ~ B\")" ->

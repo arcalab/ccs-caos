@@ -18327,35 +18327,37 @@ function $c_Lccs_frontend_CaosConfig$() {
   this.Lccs_frontend_CaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
   $m_s_package$();
   var $$x18 = $m_sr_ScalaRunTime$();
-  var y = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$2$1) => ((_$1) => {
+  var this$45 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$2$1) => ((_$1) => {
     var _$1$1 = $as_Lccs_syntax_Program$System(_$1);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$System__T(_$1$1)
   }))(this)), new $c_Lcaos_view_Code("haskell"));
+  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$45, 1);
   var $$x17 = new $c_T2("View pretty data", y);
-  var y$1 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$3$1) => ((e) => {
+  var this$49 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$3$1) => ((e) => {
     var e$1 = $as_Lccs_syntax_Program$System(e);
     return e$1
   }))(this)), $m_Lccs_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$4$1) => ((s) => {
     var s$1 = $as_Lccs_syntax_Program$System(s);
-    var this$47 = $m_Lccs_syntax_Show$();
-    return this$47.apply__Lccs_syntax_Program$Term__T(s$1.Lccs_syntax_Program$System__f_main)
+    var this$48 = $m_Lccs_syntax_Show$();
+    return this$48.apply__Lccs_syntax_Program$Term__T(s$1.Lccs_syntax_Program$System__f_main)
   }))(this)), new $c_sjsr_AnonFunction1(((this$5$1) => ((_$2) => {
     var _$2$1 = $as_Lccs_syntax_Program$Action(_$2);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$2$1)
   }))(this)), $m_Lcaos_view_Text$());
+  var y$1 = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$49, 1);
   var $$x16 = new $c_T2("Run semantics", y$1);
-  var this$51 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$6$1) => ((e$2) => {
+  var this$53 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((this$6$1) => ((e$2) => {
     var e$3 = $as_Lccs_syntax_Program$System(e$2);
     return e$3
   }))(this)), $m_Lccs_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$7$1) => ((s$2) => {
     var s$3 = $as_Lccs_syntax_Program$System(s$2);
-    var this$50 = $m_Lccs_syntax_Show$();
-    return this$50.apply__Lccs_syntax_Program$Term__T(s$3.Lccs_syntax_Program$System__f_main)
+    var this$52 = $m_Lccs_syntax_Show$();
+    return this$52.apply__Lccs_syntax_Program$Term__T(s$3.Lccs_syntax_Program$System__f_main)
   }))(this)), new $c_sjsr_AnonFunction1(((this$8$1) => ((_$3) => {
     var _$3$1 = $as_Lccs_syntax_Program$Action(_$3);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$3$1)
   }))(this)), 80);
-  var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$51);
+  var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$53);
   var $$x15 = new $c_T2("Build LTS", y$2);
   var initialSt = new $c_sjsr_AnonFunction1(((this$9$1) => ((e$3$1) => {
     var e$4 = $as_Lccs_syntax_Program$System(e$3$1);
@@ -18370,7 +18372,8 @@ function $c_Lccs_frontend_CaosConfig$() {
     var _$4$1 = $as_Lccs_syntax_Program$Action(_$4);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$4$1)
   }))(this));
-  var y$3 = new $c_Lcaos_frontend_widgets_WidgetInfo$Explore(initialSt, sos, viewSt, viewAct);
+  var this$58 = new $c_Lcaos_frontend_widgets_WidgetInfo$Explore(initialSt, sos, viewSt, viewAct);
+  var y$3 = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$58, 1);
   var $$x14 = new $c_T2("Build LTS (explore)", y$3);
   var y$4 = $m_Lcaos_frontend_Configurator$().compareBranchBisim__Lcaos_sos_SOS__Lcaos_sos_SOS__F1__F1__F1__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo($m_Lccs_backend_Semantics$(), $m_Lccs_backend_Semantics$(), new $c_sjsr_AnonFunction1(((this$12$1) => ((e$4$1) => {
     var e$5 = $as_Lccs_syntax_Program$System(e$4$1);
@@ -18381,19 +18384,19 @@ function $c_Lccs_frontend_CaosConfig$() {
   }))(this)), new $c_sjsr_AnonFunction1(((this$13$1) => ((e$5$1) => {
     var e$6 = $as_Lccs_syntax_Program$System(e$5$1);
     var defs$1 = e$6.Lccs_syntax_Program$System__f_defs;
-    var this$60 = e$6.Lccs_syntax_Program$System__f_toCompare;
-    var default$1 = new $c_sjsr_AnonFunction0(((this$59) => (() => $s_Lccs_syntax_Program$Term$__End__Lccs_syntax_Program$Term()))(this$13$1));
-    var main$1 = $as_Lccs_syntax_Program$Term((this$60.isEmpty__Z() ? default$1.apply__O() : this$60.get__O()));
+    var this$63 = e$6.Lccs_syntax_Program$System__f_toCompare;
+    var default$1 = new $c_sjsr_AnonFunction0(((this$62) => (() => $s_Lccs_syntax_Program$Term$__End__Lccs_syntax_Program$Term()))(this$13$1));
+    var main$1 = $as_Lccs_syntax_Program$Term((this$63.isEmpty__Z() ? default$1.apply__O() : this$63.get__O()));
     var toCompare$1 = $m_s_None$();
     return new $c_Lccs_syntax_Program$System(defs$1, main$1, toCompare$1)
   }))(this)), new $c_sjsr_AnonFunction1(((this$14$1) => ((s$3$1) => {
     var s$4 = $as_Lccs_syntax_Program$System(s$3$1);
-    var this$62 = $m_Lccs_syntax_Show$();
-    return this$62.apply__Lccs_syntax_Program$Term__T(s$4.Lccs_syntax_Program$System__f_main)
+    var this$65 = $m_Lccs_syntax_Show$();
+    return this$65.apply__Lccs_syntax_Program$Term__T(s$4.Lccs_syntax_Program$System__f_main)
   }))(this)), new $c_sjsr_AnonFunction1(((this$15$1) => ((s$4$1) => {
     var s$5 = $as_Lccs_syntax_Program$System(s$4$1);
-    var this$63 = $m_Lccs_syntax_Show$();
-    return this$63.apply__Lccs_syntax_Program$Term__T(s$5.Lccs_syntax_Program$System__f_main)
+    var this$66 = $m_Lccs_syntax_Show$();
+    return this$66.apply__Lccs_syntax_Program$Term__T(s$5.Lccs_syntax_Program$System__f_main)
   }))(this)), new $c_sjsr_AnonFunction1(((this$16$1) => ((_$5) => {
     var _$5$1 = $as_Lccs_syntax_Program$Action(_$5);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$5$1)
@@ -18408,19 +18411,19 @@ function $c_Lccs_frontend_CaosConfig$() {
   }))(this)), new $c_sjsr_AnonFunction1(((this$18$1) => ((e$7$1) => {
     var e$8 = $as_Lccs_syntax_Program$System(e$7$1);
     var defs$3 = e$8.Lccs_syntax_Program$System__f_defs;
-    var this$68 = e$8.Lccs_syntax_Program$System__f_toCompare;
-    var default$2 = new $c_sjsr_AnonFunction0(((this$67) => (() => $s_Lccs_syntax_Program$Term$__End__Lccs_syntax_Program$Term()))(this$18$1));
-    var main$3 = $as_Lccs_syntax_Program$Term((this$68.isEmpty__Z() ? default$2.apply__O() : this$68.get__O()));
+    var this$71 = e$8.Lccs_syntax_Program$System__f_toCompare;
+    var default$2 = new $c_sjsr_AnonFunction0(((this$70) => (() => $s_Lccs_syntax_Program$Term$__End__Lccs_syntax_Program$Term()))(this$18$1));
+    var main$3 = $as_Lccs_syntax_Program$Term((this$71.isEmpty__Z() ? default$2.apply__O() : this$71.get__O()));
     var toCompare$3 = $m_s_None$();
     return new $c_Lccs_syntax_Program$System(defs$3, main$3, toCompare$3)
   }))(this)), new $c_sjsr_AnonFunction1(((this$19$1) => ((s$5$1) => {
     var s$6 = $as_Lccs_syntax_Program$System(s$5$1);
-    var this$70 = $m_Lccs_syntax_Show$();
-    return this$70.apply__Lccs_syntax_Program$Term__T(s$6.Lccs_syntax_Program$System__f_main)
+    var this$73 = $m_Lccs_syntax_Show$();
+    return this$73.apply__Lccs_syntax_Program$Term__T(s$6.Lccs_syntax_Program$System__f_main)
   }))(this)), new $c_sjsr_AnonFunction1(((this$20$1) => ((s$6$1) => {
     var s$7 = $as_Lccs_syntax_Program$System(s$6$1);
-    var this$71 = $m_Lccs_syntax_Show$();
-    return this$71.apply__Lccs_syntax_Program$Term__T(s$7.Lccs_syntax_Program$System__f_main)
+    var this$74 = $m_Lccs_syntax_Show$();
+    return this$74.apply__Lccs_syntax_Program$Term__T(s$7.Lccs_syntax_Program$System__f_main)
   }))(this)), new $c_sjsr_AnonFunction1(((this$21$1) => ((_$6) => {
     var _$6$1 = $as_Lccs_syntax_Program$Action(_$6);
     return $m_Lccs_syntax_Show$().apply__Lccs_syntax_Program$Action__T(_$6$1)
