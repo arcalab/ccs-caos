@@ -18,7 +18,7 @@ This project uses the Caos's framework. More information on it can be found onli
 ## Requirements
 
 - JVM (>=1.8)
-- sbt
+- sbt 
 
 ## Compilation
 
